@@ -1,3 +1,4 @@
+import services.UpdateReservation;
 import services.ViewReservation;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,8 +12,8 @@ public class Application {
         String password = "Dahiya@2005";
         Scanner sc = new Scanner(System.in);
         try(Connection conn = DriverManager.getConnection(url,userName,password)) {
-            ViewReservation v = new ViewReservation() ;
-            v.viewReservation(conn,sc);
+            UpdateReservation u = new UpdateReservation();
+            u.updateReservation(conn,sc);
         }
         catch (SQLException e){
             System.out.println("Connection Failed -->"+e.getMessage());
