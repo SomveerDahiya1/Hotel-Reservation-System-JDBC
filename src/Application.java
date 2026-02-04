@@ -1,3 +1,4 @@
+import services.DeleteReservation;
 import services.ViewReservation;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +12,8 @@ public class Application {
         String password = "Dahiya@2005";
         Scanner sc = new Scanner(System.in);
         try(Connection conn = DriverManager.getConnection(url,userName,password)) {
-
+            DeleteReservation r = new DeleteReservation();
+            r.deleteReservation(conn,sc);
         }
         catch (SQLException e){
             System.out.println("Connection Failed -->"+e.getMessage());

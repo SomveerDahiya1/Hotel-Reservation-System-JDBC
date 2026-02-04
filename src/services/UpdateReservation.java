@@ -44,7 +44,6 @@ public class UpdateReservation {
                     " WHERE reservation_id="+reservationId+";";
             stmt.executeUpdate(query);
             System.out.println("Updated Successful !");
-
         }
         catch (SQLException e){
             System.out.println("Room already Reserved !!"+e.getMessage());
