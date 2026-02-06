@@ -1,10 +1,15 @@
-package services;
-
-import java.sql.SQLOutput;
+package HotelManager;
 import java.util.Scanner;
 
 public class HotelManager {
-    void getApp(){
+    static HotelManager hotelManager ;
+    private HotelManager(){
+
+    }
+    public static HotelManager getApp(){
+        return new HotelManager();
+    }
+    public void appMenu(){
         while(true){
             System.out.println("HOTEL MANAGEMENT SYSTEM");
             System.out.println("1. Add Reservation");
