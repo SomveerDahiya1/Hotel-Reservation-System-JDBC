@@ -13,7 +13,7 @@ public class HotelReservationApp {
     public static HotelReservationApp getApp(){
         return new HotelReservationApp();
     }
-    public void appMenu(){
+    public void appMenu(Connection conn,Scanner sc){
         while(true){
             System.out.println("HOTEL MANAGEMENT SYSTEM");
             System.out.println("1. Add Reservation");
@@ -21,21 +21,21 @@ public class HotelReservationApp {
             System.out.println("3. Update Reservation");
             System.out.println("4. Delete Reservation");
             System.out.println("5. Exit");
-            Scanner sc = new Scanner(System.in) ;
+            Scanner scan = new Scanner(System.in) ;
             System.out.print("Choose Option:");
-            int option=sc.nextInt();
+            int option=scan.nextInt();
             switch (option){
                 case 1: {
-
+                    addReservation(conn,sc);
                     break ;
                 }case 2: {
-
+                    viewReservation(conn,sc);
                     break ;
                 }case 3: {
-
+                    updateReservation(conn,sc);
                     break ;
                 }case 4: {
-
+                    deleteReservation(conn,sc);
                     break ;
                 }case 5: {
                     return;
